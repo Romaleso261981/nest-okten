@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
-import { UsersModule } from './users/users.module';
-import { PokemonsModule } from './pokemons/pokemons.module';
 import { healthModule } from './modules/health/health.module';
+import { PokemonsModule } from './modules/pokemons/pokemons.module';
+import { UsersModule } from './modules/users/users.module';
 
 @Module({
   imports: [UsersModule, PokemonsModule, healthModule],

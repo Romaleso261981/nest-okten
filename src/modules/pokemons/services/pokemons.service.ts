@@ -1,6 +1,7 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { Injectable } from '@nestjs/common';
-import { CreatePokemonDto } from './dto/create-pokemon.dto';
-import { UpdatePokemonDto } from './dto/update-pokemon.dto';
+import { UpdatePokemonDto } from '../dto/update-pokemon.dto';
+import { CreatePokemonDto } from '../dto/create-pokemon.dto';
 
 @Injectable()
 export class PokemonsService {

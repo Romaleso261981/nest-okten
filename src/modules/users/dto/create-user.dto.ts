@@ -1,19 +1,18 @@
-import { ApiProperty } from '@nestjs/swagger';
+import { IsEmail, IsOptional, IsString, MinLength } from 'class-validator';
 
 export class CreateUserDto {
-  @ApiProperty({
-    description: 'field for set user name',
-    default: 'Roman',
-    required: false,
-  })
-  name: string;
+  @MinLength(3)
+  @IsString()
+  @IsOptional()
+  name?: string;
 
-  @ApiProperty({
-    description: 'field for set user email',
-    default: 'roman@gmail.com',
-  })
+  @IsString()
+  @IsEmail()
   email: string;
 
-  @ApiProperty()
+  @IsString()
   password: string;
+
+  @IsOptional()
+  data?: string;
 }
