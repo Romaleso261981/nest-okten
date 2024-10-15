@@ -1,6 +1,6 @@
 import { forwardRef, Module } from '@nestjs/common';
 
-import { ArticlesModule } from '../articles/articles.module';
+import { ArticlesModule } from '../modules/articles/articles.module';
 import { UsersController } from './users.controller';
 import { UsersService } from './users.service';
 import { UsersAdminController } from './users-admin.controller';

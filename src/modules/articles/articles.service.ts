@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { CommentsService } from 'src/comments/comments.service';
+import { CommentsService } from 'src/modules/comments/comments.service';
 import { UsersService } from 'src/modules/users/services/users.service';
 
 import { CreateArticleDto } from './dto/create-article.dto';
