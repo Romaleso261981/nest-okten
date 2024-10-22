@@ -5,7 +5,8 @@ import { CreateCommentDto } from './dto/create-comment.dto';
 @Injectable()
 export class CommentsService {
   create(createCommentDto: CreateCommentDto) {
-    return 'This action adds a new comment';
+    console.log('createCommentDto', createCommentDto);
+    return { createCommentDto };
   }
   findAll() {
     return `This action returns all comments`;
