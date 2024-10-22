@@ -1,17 +1,26 @@
 /* eslint-disable no-console */
 import { Injectable } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
+import { AppConfig, Config } from 'src/configs/config.type';
 
 import { CreateUserDto } from '../dto/create-user.dto';
 import { UpdateUserDto } from '../dto/update-user.dto';
 
 @Injectable()
 export class UsersService {
+  constructor(private readonly configService: ConfigService<Config>) {}
+
   create(createUserDto: CreateUserDto) {
+    const appConfig = this.configService.get<AppConfig>('app');
+
+    console.log('appConfig', appConfig);
     return createUserDto;
   }
 
   findAll() {
-    return `This action returns all users`;
+    const appConfig = this.configService.get<AppConfig>('app');
+
+    return `This action returns all users ${JSON.stringify(appConfig)}`;
   }
 
   findOne(id: number) {
