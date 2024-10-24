@@ -49,7 +49,7 @@ async function bootstrap() {
   const configService = app.get(ConfigService);
   const appConfig = configService.get<AppConfig>('app');
 
-  await app.listen(appConfig.port, () => {
+  await app.listen(3000, () => {
     console.log(
       `Server is running on http://${appConfig.host}:${appConfig.port}`,
     );

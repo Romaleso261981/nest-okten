@@ -1,0 +1,13 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "server": "localhost",
+      "port": 5432,
+      "driver": "PostgreSQL",
+      "name": "OktenDB",
+      "database": "march-2024",
+      "username": "user"
+    }
+  ]
+}

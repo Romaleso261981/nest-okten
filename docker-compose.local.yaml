@@ -30,8 +30,8 @@ services:
     volumes:
       - ./march-2024-api-s3-data:/usr/src/app/s3
     environment:
-      - MINIO_ROOT_USER=user            # AWS_S3_ACCESS_KEY
-      - MINIO_ROOT_PASSWORD=password    # AWS_S3_SECRET_KEY
+      - MINIO_ROOT_USER=user
+      - MINIO_ROOT_PASSWORD=password
 
 volumes:
   march-2024-api-db:
