@@ -1,24 +1,16 @@
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 
-import { AppConfig, Config } from '../../../configs/config.type';
-import { CreateUserReqDto } from '../models/dto/req/create-user.req.dto';
+import { Config } from '../../../configs/config.type';
+import { UserRepository } from '../../repository/services/user.repository';
 import { UpdateUserReqDto } from '../models/dto/req/update-user.req.dto';
-import { UserResDto } from '../models/dto/res/user.res.dto';
 
 @Injectable()
 export class UsersService {
-  constructor(private readonly configService: ConfigService<Config>) {}
-
-  public async create(createUserDto: CreateUserReqDto): Promise<UserResDto> {
-    const appConfig = this.configService.get<AppConfig>('database');
-    console.log(appConfig);
-    return {} as UserResDto;
-  }
-
-  findAll() {
-    return `This action returns all users`;
-  }
+  constructor(
+    private readonly configService: ConfigService<Config>,
+    private userRepository: UserRepository,
+  ) {}
 
   findOne(id: number) {
     return `This action returns a #${id} user`;
