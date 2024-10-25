@@ -5,6 +5,7 @@ import { APP_FILTER } from '@nestjs/core';
 import { GlobalExceptionFilter } from './common/filters/globalExceptionFilter';
 import configuration from './configs/configuration';
 import { CommentsModule } from './modules/comments/comments.module';
+import { LoggerModule } from './modules/logger/logger.module';
 import { PostgresModule } from './modules/postgres/postgres.module';
 import { RedisModule } from './modules/redis/redis.module';
 import { UsersModule } from './modules/users/users.module';
@@ -15,6 +16,7 @@ import { UsersModule } from './modules/users/users.module';
       load: [configuration],
       isGlobal: true,
     }),
+    LoggerModule,
     PostgresModule,
     RedisModule,
     UsersModule,
