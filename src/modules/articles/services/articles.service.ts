@@ -1,9 +1,9 @@
 import { Injectable } from '@nestjs/common';
-import { CommentsService } from 'src/modules/comments/services/comments.service';
-import { UsersService } from 'src/modules/users/services/users.service';
 
-import { CreateArticleDto } from '../models/dto/create-article.dto';
-import { UpdateArticleDto } from '../models/dto/update-article.dto';
+import { CommentsService } from '../../comments/services/comments.service';
+import { UsersService } from '../../users/services/users.service';
+import { CreateArticleDto } from '../models/dto/req/create-article.dto';
+import { UpdateArticleDto } from '../models/dto/req/update-article.dto';
 
 @Injectable()
 export class ArticlesService {
@@ -11,19 +11,24 @@ export class ArticlesService {
     private readonly userService: UsersService,
     private readonly commentsService: CommentsService,
   ) {}
+
   create(dto: CreateArticleDto) {
     this.userService.checkAbilityToEditArticle('authorId', 'articleId');
     return 'This action adds a new user';
   }
+
   findAll() {
     return `This action returns all users`;
   }
+
   findOne(id: number) {
     return `This action returns a #${id} user`;
   }
+
   update(id: number, updateUserDto: UpdateArticleDto) {
     return `This action updates a #${id} user`;
   }
+
   remove(id: number) {
     this.commentsService.deleteAllCommentsForArticle('articleId');
     return `This action removes a #${id} user`;

@@ -1,16 +1,18 @@
 import { Injectable } from '@nestjs/common';
 
-import { CreateCommentDto } from '../models/dto/create-comment.dto';
+import { CreateCommentDto } from '../models/dto/req/create-comment.dto';
 
 @Injectable()
 export class CommentsService {
   create(createCommentDto: CreateCommentDto) {
-    return { createCommentDto };
+    return 'This action adds a new comment';
   }
+
   findAll() {
     return `This action returns all comments`;
   }
-  deleteAllCommentsForArticle(articleId: string) {
-    return { articleId };
+
+  public async deleteAllCommentsForArticle(articleId: string) {
+    // Delete all comments for the article
   }
 }

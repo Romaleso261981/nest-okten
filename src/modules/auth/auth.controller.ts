@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Body, Controller, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 
@@ -18,6 +19,6 @@ export class AuthController {
 
   @Post('sign-in')
   public async signIn(@Body() dto: SignInReqDto): Promise<AuthResDto> {
-    return await this.authService.singIn(dto);
+    return await this.authService.signIn(dto);
   }
 }

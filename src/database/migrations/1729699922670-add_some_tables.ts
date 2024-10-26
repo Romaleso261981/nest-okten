@@ -1,7 +1,7 @@
 import { MigrationInterface, QueryRunner } from "typeorm";
 
-export class FixRelations1729848875289 implements MigrationInterface {
-    name = 'FixRelations1729848875289'
+export class AddSomeTables1729699922670 implements MigrationInterface {
+    name = 'AddSomeTables1729699922670'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query(`CREATE TABLE "comments" ("created" TIMESTAMP NOT NULL DEFAULT now(), "updated" TIMESTAMP NOT NULL DEFAULT now(), "id" uuid NOT NULL DEFAULT uuid_generate_v4(), "body" text NOT NULL, "article_id" uuid NOT NULL, "user_id" uuid NOT NULL, CONSTRAINT "PK_8bf68bc960f2b69e818bdb90dcb" PRIMARY KEY ("id"))`);
@@ -20,4 +20,5 @@ export class FixRelations1729848875289 implements MigrationInterface {
         await queryRunner.query(`DROP TABLE "follow"`);
         await queryRunner.query(`DROP TABLE "comments"`);
     }
+
 }

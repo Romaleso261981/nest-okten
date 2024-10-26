@@ -1,7 +1,8 @@
 import { ApiProperty } from '@nestjs/swagger';
 import { Transform, Type } from 'class-transformer';
 import { IsOptional, IsString, Length, Matches } from 'class-validator';
-import { TransformHelper } from 'src/common/helpers/transform.helper';
+
+import { TransformHelper } from '../../../../../common/helpers/transform.helper';
 
 export class BaseUserReqDto {
   @IsOptional()
