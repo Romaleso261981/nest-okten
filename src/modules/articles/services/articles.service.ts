@@ -13,8 +13,7 @@ export class ArticlesService {
   ) {}
 
   create(dto: CreateArticleDto) {
-    this.userService.checkAbilityToEditArticle('authorId', 'articleId');
-    return 'This action adds a new user';
+    return `This action adds a new user ${dto}`;
   }
 
   findAll() {
@@ -26,7 +25,7 @@ export class ArticlesService {
   }
 
   update(id: number, updateUserDto: UpdateArticleDto) {
-    return `This action updates a #${id} user`;
+    return `This action updates a #${id} user ${updateUserDto}`;
   }
 
   remove(id: number) {
